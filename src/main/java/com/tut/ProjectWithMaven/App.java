@@ -19,16 +19,21 @@ public class App
     {
         System.out.println( "Projected Started" );
         
-       Address ad1 = new Address();
-       ad1.setStreet("Gali 1");
-       ad1.setCity("Kulchandu");
-       ad1.setOpen(true);
-       ad1.setAddedDate(new Date());
-       
-       FileInputStream fis = new FileInputStream("src/main/java/img.jpg");
-       byte[] data = new byte[fis.available()];
-       
-       ad1.setImage(data);
+//       Address ad1 = new Address();
+//       ad1.setStreet("Gali 1");
+//       ad1.setCity("Kulchandu");
+//       ad1.setOpen(true);
+//       ad1.setAddedDate(new Date());
+//       
+//       FileInputStream fis = new FileInputStream("src/main/java/img.jpg");
+//       byte[] data = new byte[fis.available()];
+//       
+//       ad1.setImage(data);
+        
+        Student st1 = new Student();
+        st1.setId(2);
+        st1.setName("Amit Saini");
+        st1.setCity("Chandigarh");
         
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         
@@ -36,7 +41,7 @@ public class App
         
         Transaction trans = sess.beginTransaction();
         
-        sess.persist(ad1);
+        sess.persist(st1);
         
         trans.commit();
         
